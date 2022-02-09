@@ -1,0 +1,185 @@
+
+        header
+        {
+          position: fixed;
+          width: 100%;
+          z-index: 1;
+          padding: 16px 0;
+        }
+       header .bg-blury{
+        min-width: fit-content;
+        max-width: 820px;
+        padding: 32px 16px;
+        height: 100%;
+        display: inline-flex;
+        float: right;
+        background: rgba(33, 33, 33, 0.63);
+        box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(42px);
+       }
+       header .line {
+            position: relative;
+            border-top: .15rem solid rgb(255, 255, 255);
+            width:100%;
+            margin: 0 1rem;
+        }
+        header .line::after {
+          position: absolute;
+          content: "";
+          border-top: 0.15rem solid rgb(255, 255, 255);
+          width: 30px;
+          right: -30px;
+          top: -2px;
+          z-index: 1;
+        }
+        /*Strip the ul of padding and list styling*/
+          ul {
+            list-style-type:none;
+            margin:0 !important;
+            padding:0 !important;
+            /* float: right; */
+            /* position: absolute; */
+          }
+
+          /*Create a horizontal list with spacing*/
+          li {
+            display:inline-block;
+            float: left;
+          }
+
+          /*Style for menu links*/
+          li a {
+            display:block;
+            min-width:100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #fff;
+            /* background: #2f3036; */
+            text-decoration: none;
+          }
+
+          /*Hover state for top level links*/
+          li:hover a {
+            /* background: #19c589; */
+            color: gray;
+          }
+
+          
+
+        
+          /*Display the dropdown on hover*/
+          ul li a:hover + .hidden, .hidden:hover {
+            display: block;
+          }
+
+          /*Style 'show menu' label button and hide it by default*/
+          .show-menu {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-decoration: none;
+            color: #fff;
+            background: #19c589;
+            text-align: center;
+            padding: 10px 0;
+            display: none;
+          }
+
+          /*Hide checkbox*/
+          input[type=checkbox]{
+              display: none;
+          }
+
+          /*Show menu when invisible checkbox is checked*/
+          input[type=checkbox]:checked ~ #menu{
+              display: block;
+          }
+
+
+          /*Responsive Styles*/
+
+          @media screen and (max-width : 760px){
+            header .bg-blury{
+              display: block;
+            }
+            /*Make dropdown links appear inline*/
+            ul {
+              position: static;
+              display: none;
+            }
+            /*Create vertical spacing*/
+            li {
+              margin-bottom: 1px;
+            }
+            /*Make all menu links full width*/
+            ul li, li a {
+              width: 100%;
+            }
+            /*Display 'show menu' link*/
+            .show-menu {
+              display:block;
+            }
+          }
+@mixin transition {
+    @for $i from 1 through 4 {
+        $speed: 10 + 100/random(10);
+        $rotation: random(360);
+        @keyframes flake-#{$i} {
+            0% {
+              transform: translate3d(0,0,0) rotate(#{$rotation}deg);
+            }
+            100% {
+              transform: translate3d(0,0,0) rotate(#{$rotation + 360}deg);
+            }
+          }
+      &:nth-child(#{$i}) {
+        animation: flake-#{$i} #{$speed}s linear infinite;
+
+
+      }
+    }
+}
+#main{
+    display: inline;
+}
+#main .graphics{
+    max-width: 850px;
+    min-height: 850px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+#main .graphics svg{
+    //position: absolute;
+    //margin: 0 auto;
+    //display: block;
+    position: absolute;
+}
+
+#main .graphics svg{
+    @include transition;
+  }
+#main .main-bg
+{
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+#main{
+  overflow: hidden;
+  width: 100vw;
+    height: 100%;
+    display: inline-block;
+}
+#main .main-content
+{
+  margin: 30vh 0;
+}
