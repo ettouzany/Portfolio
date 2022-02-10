@@ -119,39 +119,30 @@ input[type=checkbox]:checked ~ #menu {
 
 @keyframes flake-1 {
   0% {
-    transform: translate3d(0, 0, 0) rotate(348deg); }
+    transform: translate3d(0, 0, 0) rotate(303deg); }
   100% {
-    transform: translate3d(0, 0, 0) rotate(708deg); } }
+    transform: translate3d(0, 0, 0) rotate(663deg); } }
 
 #main .graphics svg:nth-child(1) {
-  animation: flake-1 26.66667s linear infinite; }
+  animation: flake-1 60s linear infinite; }
 
 @keyframes flake-2 {
   0% {
-    transform: translate3d(0, 0, 0) rotate(62deg); }
+    transform: translate3d(0, 0, 0) rotate(162deg); }
   100% {
-    transform: translate3d(0, 0, 0) rotate(422deg); } }
+    transform: translate3d(0, 0, 0) rotate(522deg); } }
 
 #main .graphics svg:nth-child(2) {
-  animation: flake-2 24.28571s linear infinite; }
+  animation: flake-2 30s linear infinite; }
 
 @keyframes flake-3 {
   0% {
-    transform: translate3d(0, 0, 0) rotate(239deg); }
+    transform: translate3d(0, 0, 0) rotate(225deg); }
   100% {
-    transform: translate3d(0, 0, 0) rotate(599deg); } }
+    transform: translate3d(0, 0, 0) rotate(585deg); } }
 
 #main .graphics svg:nth-child(3) {
-  animation: flake-3 30s linear infinite; }
-
-@keyframes flake-4 {
-  0% {
-    transform: translate3d(0, 0, 0) rotate(119deg); }
-  100% {
-    transform: translate3d(0, 0, 0) rotate(479deg); } }
-
-#main .graphics svg:nth-child(4) {
-  animation: flake-4 26.66667s linear infinite; }
+  animation: flake-3 110s linear infinite; }
 
 #main .main-bg {
   position: fixed;
@@ -160,7 +151,8 @@ input[type=checkbox]:checked ~ #menu {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; }
+  z-index: -1;
+  background-color: #000; }
 
 #main {
   overflow: hidden;
@@ -170,3 +162,39 @@ input[type=checkbox]:checked ~ #menu {
 
 #main .main-content {
   margin: 30vh 0; }
+
+#main .myimage {
+  position: absolute;
+  width: 366.36px;
+  height: 516.65px;
+  background: rgba(196, 196, 196, 0.18);
+  box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(42px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 35px;
+  transform: rotate(11.9deg);
+  z-index: 1; }
+
+#main .balls img {
+  position: absolute;
+  z-index: 0; }
+
+#main .balls img {
+  position: absolute;
+  z-index: 0; }
+
+#main .balls img:nth-child(1) {
+  top: 120px;
+  left: 117px; }
+
+#main .balls img:nth-child(2) {
+  top: 154px;
+  left: 486px; }
+
+#main .balls img:nth-child(3) {
+  top: 533px;
+  left: 0px; }
+
+#main .balls img:nth-child(4) {
+  top: 449px;
+  left: 237px; }
