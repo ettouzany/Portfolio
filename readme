@@ -1,35 +1,51 @@
+.glassy {
+    box-shadow: -5px -5px 250px 0px #FFFFFF05 inset;
+    border: 2px solid #ffffff40;
+    backdrop-filter: blur(4px);
+    background-clip: padding-box !important;
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    padding: 16px;
+    background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+}
 
-    <div id="services" class="container">
-        <div class="glassy" style="display: inline-block;
-        width: inherit;">
-            <div class="card-header-glassy">
-                <div class="glassy">
-                    <div class="glassy-pill-title">UI/UX & <br>Graphics</div>
-                    <div class="glassy-icon">
-                        <i class="uil uil-brush-alt"></i>
-                    </div>
-                </div>
-                <div class="glassy">
-                    <div class="glassy-pill-title">Web <br>Development</div>
-                    <div class="glassy-icon">
-                        <i class="uil uil-arrow"></i>
-                    </div>
-                </div>
-                <div class="glassy">
-                    <div class="glassy-pill-title">DevOps <br>Solutions</div>
-                    <div class="glassy-icon">
-                        <i class="uil uil-process"></i>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="row">
-                    <div class="text-center p-5 col-12">
-                        The top-notch and preeminent Web and Mobile App Development Company of India with its global presence in USA, MindInventory is first-rate choice of the clients worldwide. With sheer customer satisfaction in mind, we are profoundly dedicated to developing
-                        highly intriguing apps that strictly meet the business requirements and catering a wide spectrum of projects.
-                    </div>
-                </div>
-            </div>
-        </div>
+.card-header-glassy {
+    font-family: "Nexa";
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    width: calc(100% + 280px);
+    margin-left: -140px;
+}
 
-    </div>
+.card-header-glassy .glassy {
+    min-width: 400px;
+    margin: 16px;
+    height: 164px;
+    border-radius: 26px;
+}
+
+.glassy-pill-title {
+    width: 180px;
+    position: absolute;
+    margin: 20px;
+}
+
+.glassy-icon {
+    float: right;
+    font-size: 62px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.37);
+    color: black;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    border-radius: 18px;
+    margin: 16px;
+}
+
+#services {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
