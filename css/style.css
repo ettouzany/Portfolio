@@ -1,7 +1,7 @@
 header {
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   padding: 16px 0; }
 
 header .bg-blury {
@@ -101,7 +101,9 @@ input[type=checkbox]:checked ~ #menu {
     display: block; } }
 
 #main {
-  display: inline; }
+  display: flex;
+  height: 100vh;
+  align-items: center; }
 
 #main .graphics {
   max-width: 850px;
@@ -119,30 +121,33 @@ input[type=checkbox]:checked ~ #menu {
 
 @keyframes flake-1 {
   0% {
-    transform: translate3d(0, 0, 0) rotate(303deg); }
+    transform: rotate(90deg); }
   100% {
-    transform: translate3d(0, 0, 0) rotate(663deg); } }
+    transform: rotate(450deg); } }
 
 #main .graphics svg:nth-child(1) {
-  animation: flake-1 60s linear infinite; }
+  animation: flake-1 26.66667s linear infinite;
+  will-change: rotate; }
 
 @keyframes flake-2 {
   0% {
-    transform: translate3d(0, 0, 0) rotate(162deg); }
+    transform: rotate(200deg); }
   100% {
-    transform: translate3d(0, 0, 0) rotate(522deg); } }
+    transform: rotate(560deg); } }
 
 #main .graphics svg:nth-child(2) {
-  animation: flake-2 30s linear infinite; }
+  animation: flake-2 24.28571s linear infinite;
+  will-change: rotate; }
 
 @keyframes flake-3 {
   0% {
-    transform: translate3d(0, 0, 0) rotate(225deg); }
+    transform: rotate(43deg); }
   100% {
-    transform: translate3d(0, 0, 0) rotate(585deg); } }
+    transform: rotate(403deg); } }
 
 #main .graphics svg:nth-child(3) {
-  animation: flake-3 110s linear infinite; }
+  animation: flake-3 20s linear infinite;
+  will-change: rotate; }
 
 #main .main-bg {
   position: fixed;
@@ -156,12 +161,26 @@ input[type=checkbox]:checked ~ #menu {
 
 #main {
   overflow: hidden;
-  width: 100vw;
-  height: 100%;
-  display: inline-block; }
+  width: 100vw; }
 
 #main .main-content {
-  margin: 30vh 0; }
+  margin: 0;
+  color: white; }
+
+.btn {
+  height: 48px !important;
+  width: 170px !important;
+  background: transparent !important;
+  font-weight: 700 !important;
+  border: 0.7px solid #969696 !important; }
+
+.btn-black {
+  height: 48px !important;
+  width: 170px !important;
+  background: white !important;
+  color: black !important;
+  font-weight: 700 !important;
+  border: 0 !important; }
 
 #main .myimage {
   position: absolute;
@@ -198,3 +217,50 @@ input[type=checkbox]:checked ~ #menu {
 #main .balls img:nth-child(4) {
   top: 449px;
   left: 237px; }
+
+.glassy {
+  box-shadow: -5px -5px 250px 0px #FFFFFF05 inset;
+  border: 2px solid #ffffff40;
+  backdrop-filter: blur(4px);
+  background-clip: padding-box !important;
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50px;
+  padding: 16px;
+  background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%); }
+
+.card-header-glassy {
+  justify-content: center;
+  font-family: "Nexa";
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  width: calc(100% + 280px);
+  margin-left: -140px; }
+
+.card-header-glassy .glassy {
+  min-width: 400px;
+  margin: 16px;
+  height: 164px;
+  border-radius: 26px; }
+
+.glassy-pill-title {
+  width: 180px;
+  position: absolute;
+  margin: 20px; }
+
+.glassy-icon {
+  float: right;
+  font-size: 62px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.37);
+  color: black;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  border-radius: 18px;
+  margin: 16px; }
+
+#services {
+  display: flex;
+  align-items: center;
+  min-height: 100vh; }

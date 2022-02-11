@@ -3,7 +3,7 @@
         {
           position: fixed;
           width: 100%;
-          z-index: 1;
+          z-index: 2;
           padding: 16px 0;
         }
        header .bg-blury{
@@ -124,21 +124,25 @@
     @for $i from 1 through 3 {
         $speed: 10 + 100/random(10);
         $rotation: random(360);
+       // $rotation: random(360);
         @keyframes flake-#{$i} {
             0% {
-              transform: translate3d(0,0,0) rotate(#{$rotation}deg);
+              transform: rotate(#{$rotation}deg);
             }
             100% {
-              transform: translate3d(0,0,0) rotate(#{$rotation + 360}deg);
+              transform: rotate(#{$rotation + 360}deg);
             }
           }
       &:nth-child(#{$i}) {
         animation: flake-#{$i} #{$speed}s linear infinite;
+        will-change: rotate;
       }
     }
 }
 #main{
-    display: inline;
+    display: flex;
+    height: 100vh;
+    align-items: center;
 }
 #main .graphics{
     max-width: 850px;
@@ -174,17 +178,32 @@
 }
 #main{
   overflow: hidden;
-  width: 100vw;
-    height: 100%;
-    display: inline-block;
+  width: 100vw;;
 }
 #main .main-content
 {
-  margin: 30vh 0;
+  margin: 0;
+  color: white;
 }
 
 
-
+.btn
+{
+  height: 48px !important;
+  width: 170px !important;
+  background: transparent !important;
+  font-weight: 700 !important;
+  border: 0.7px solid #969696 !important;
+}
+.btn-black
+{
+  height: 48px !important;
+  width: 170px !important;
+  background: white !important;
+  color: black !important;
+  font-weight: 700 !important;
+  border: 0!important;
+}
 #main .myimage
 {
   position: absolute;
@@ -208,6 +227,10 @@ z-index: 1;
       // left: $i*100px;
     }
   }
+}
+#main
+{
+
 }
 #main .balls img{
   position: absolute;
@@ -277,3 +300,59 @@ z-index: 1;
 
 // background: url(pin-zihong-tang-cutout-people-render-people-38.png);
 // mix-blend-mode: exclusion;
+
+
+
+
+.glassy {
+  box-shadow: -5px -5px 250px 0px #FFFFFF05 inset;
+  border: 2px solid #ffffff40;
+  backdrop-filter: blur(4px);
+  background-clip: padding-box !important;
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50px;
+  padding: 16px;
+  background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.card-header-glassy {
+  justify-content: center;
+  font-family: "Nexa";
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  width: calc(100% + 280px);
+  margin-left: -140px;
+}
+
+.card-header-glassy .glassy {
+  min-width: 400px;
+  margin: 16px;
+  height: 164px;
+  border-radius: 26px;
+}
+
+.glassy-pill-title {
+  width: 180px;
+  position: absolute;
+  margin: 20px;
+}
+
+.glassy-icon {
+  float: right;
+  font-size: 62px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.37);
+  color: black;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  border-radius: 18px;
+  margin: 16px;
+}
+
+#services {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
