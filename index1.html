@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <style>
+      .box{
+        width: 366.36px;
+    height: 516.65px;
+
+    background: rgba(196, 196, 196, 0.18);
+    box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(42px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 35px;
+    margin:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:1px solid rgba(255,255,255,0.5);
+    border-left:1px solid rgba(255,255,255,0.5);
+    transform-style: preserve-3d;
+    transform: perspective(800px);
+    
+}
+
+
+
+    </style>
 </head>
 <body>
     <header>
@@ -107,9 +136,9 @@
                                       
                                     
                             <div class="myimage">
-
+                              <div class="box"></div>
                             </div>
-                           <div class="balls">
+                           <div class="balls ">
                             <img width="100" src="./assets/images/balls/gold1.png" alt="">
                             <img width="125" src="./assets/images/balls/gold2.png" alt="">
                             <img width="175" src="./assets/images/balls/gold3.png" alt="">
@@ -152,6 +181,257 @@
               </div>
           </div>
       </div>
+
+  </div>
+
+  <div class="container">
+    <div class="portfolio-title">
+      <div class="section-title">
+        <h1>Portfolio</h1>
+        <div class="separator"></div>
+        <p>Portfolio created with isotope - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto repellendus!</p>
+      </div>
+    </div>
+    
+    <div id="filters" class="portfolio-filters">
+      <ul class="list-inline">
+                <li><a id="all" data-filter="*" class="active"><h5>All</h5></a></li>	
+                <li><a data-filter=".branding"><h5>Branding</h5></a></li>
+                <li><a data-filter=".design"><h5>Design</h5></a></li>
+                <li><a data-filter=".photography"><h5>Photography</h5></a></li>
+                <li><a data-filter=".videography"><h5>Videography</h5></a></li>
+                <li><a data-filter=".web"><h5>Web</h5></a></li>
+              </ul>
+    </div>
+    
+    <div id="Portfolio" class="portfolio">
+      
+      <!-- portfolio item-->
+      <div class="portfolio-item branding">
+        <div class="portfolio-image">
+          <img src="https://source.unsplash.com/5VXH4RG88gc" alt="image" />
+        </div>
+        <a href="#">
+          <div class="project-overlay">
+            <div class="project-info">
+              <i class="fa fa-search"></i>
+              <h3 class="project-name">Project name 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- /portfolio item-->
+      
+      <!-- portfolio item-->
+      <div class="portfolio-item branding design">
+        <div class="portfolio-image">
+          <img src="https://source.unsplash.com/5VXH4RG88gc" alt="image" />
+        </div>
+        <a href="#">
+          <div class="project-overlay">
+            <div class="project-info">
+              <i class="fa fa-search"></i>
+              <h3 class="project-name">Project name 2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- /portfolio item-->
+      
+      <!-- portfolio item-->
+      <div class="portfolio-item design">
+        <div class="portfolio-image">
+          <img src="https://source.unsplash.com/-RBuQ2PK_L8" alt="image" />
+        </div>
+        <a href="#">
+          <div class="project-overlay">
+            <div class="project-info">
+              <i class="fa fa-search"></i>
+              <h3 class="project-name">Project name 3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- /portfolio item-->
+      
+      <!-- portfolio item-->
+      <div class="portfolio-item photography">
+        <div class="portfolio-image">
+          <img src="https://source.unsplash.com/5VXH4RG88gc" alt="image" />
+        </div>
+        <a href="#">
+          <div class="project-overlay">
+            <div class="project-info">
+              <i class="fa fa-search"></i>
+              <h3 class="project-name">Project name 4</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- /portfolio item-->
+      
+    </div>
+    <div id="we_do" class="we_do">
+
+    </div>
+    <div class="screen " id="fold-effect">
+      <div class="wrapper-3d">
+        <div class="fold fold-top">
+          <div class="fold-align">
+            <div class="fold-content">
+              <div class="marquee">
+                <div class="track">
+                  Creators.Creators.<span class="-focus">Creators.</span>Creators.Creators.Creators.Creators.Creators.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Thinkers.Thinkers.<span class="-focus">Thinkers.</span>Thinkers.Thinkers.Thinkers.Thinkers.Thinkers.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Innovators.Innovators.<span class="-focus">Innovators.</span>Innovators.Innovators.Innovators.Innovators.Innovators.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Rebels.Rebels.Rebels.<span class="-focus">Rebels.</span>Rebels.Rebels.Rebels.Rebels.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fold fold-center" id="center-fold">
+          <div class="fold-align">
+            <div class="fold-content" id="center-content">
+              <div class="marquee">
+                <div class="track">
+                  Creators.Creators.<span class="-focus">Creators.</span>Creators.Creators.Creators.Creators.Creators.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Thinkers.Thinkers.<span class="-focus">Thinkers.</span>Thinkers.Thinkers.Thinkers.Thinkers.Thinkers.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Innovators.Innovators.<span class="-focus">Innovators.</span>Innovators.Innovators.Innovators.Innovators.Innovators.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Rebels.Rebels.Rebels.<span class="-focus">Rebels.</span>Rebels.Rebels.Rebels.Rebels.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fold fold-bottom">
+          <div class="fold-align">
+            <div class="fold-content">
+              <div class="marquee">
+                <div class="track">
+                  Creators.Creators.<span class="-focus">Creators.</span>Creators.Creators.Creators.Creators.Creators.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Thinkers.Thinkers.<span class="-focus">Thinkers.</span>Thinkers.Thinkers.Thinkers.Thinkers.Thinkers.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Innovators.Innovators.<span class="-focus">Innovators.</span>Innovators.Innovators.Innovators.Innovators.Innovators.
+                </div>
+              </div>
+    
+              <div class="marquee">
+                <div class="track">
+                  Rebels.Rebels.Rebels.<span class="-focus">Rebels.</span>Rebels.Rebels.Rebels.Rebels.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+       VanillaTilt.init(document.querySelectorAll(".box"), {
+        max: 25,
+            speed: 1000,
+            easing:"cubic-bezier(.03,.98,.52,.99)",
+            perspective:600,
+            transition:true
+        });
+      $(function(){
+        var $container = $('#Portfolio');
+
+        $container.isotope({
+          itemSelector: '.portfolio-item',
+          layoutMode: 'fitRows',
+        });
+
+        $('#filters').on( 'click', 'a', function() {
+          var filterValue = $(this).attr('data-filter');
+          $('#filters a').removeClass('active');
+          $(this).addClass('active');
+          $container.isotope({ filter: filterValue });
+        });
+      });
+      gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray('.marquee').forEach((el, index) => {
+	const w = el.querySelector('.track');
+	console.log(w.scroll())
+	const [x, xEnd] = (index % 2 == 0) ? [-500, -1500] : [-500, 0];
+	gsap.fromTo(w, {  x  }, {
+		x: xEnd,
+		scrollTrigger: {
+			scrub: 1
+		}
+	});
+});
+
+const centerContent = document.getElementById('center-content');
+const centerFold = document.getElementById('center-fold');
+const foldsContent = Array.from(document.querySelectorAll('.fold-content'));
+
+let targetScroll = -(
+  document.documentElement.scrollTop || document.body.scrollTop
+);
+let currentScroll = targetScroll;
+
+const tick = () => {
+  const overflowHeight = centerContent.clientHeight - centerFold.clientHeight;
+
+  document.body.style.height = `${overflowHeight + window.innerHeight}px`;
+
+  targetScroll = -(
+    document.documentElement.scrollTop || document.body.scrollTop
+  );
+  currentScroll += (targetScroll - currentScroll) * 0.1;
+  foldsContent.forEach(content => {
+    content.style.transform = `translateY(${currentScroll}px)`;
+  });
+  requestAnimationFrame(tick);
+};
+tick();
+
+    </script>
 
   </div>
 </body>

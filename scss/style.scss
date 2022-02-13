@@ -1,3 +1,63 @@
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+	$extmods: (eot: "?",
+			svg: "#"+ str-replace($name, " ", "_"));
+
+	$formats: (otf: "opentype",
+			ttf: "truetype"
+		);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+// Nexa Extra Light
+@include font-face("Nexa", "../assets/fonts/NexaExtraLight", 100, null, otf);
+// Nexa Extra Light Italic
+@include font-face("Nexa", "../assets/fonts/NexaExtraLightItalic", 100, italic, otf);
+// Nexa Thin
+@include font-face("Nexa", "../assets/fonts/NexaThin", 200, null, otf);
+// Nexa Thin Italic
+@include font-face("Nexa", "../assets/fonts/NexaThinItalic", 200, italic, otf);
+// Nexa Light
+@include font-face("Nexa", "../assets/fonts/NexaLight", 300, null, otf);
+// Nexa Light Italic
+@include font-face("Nexa", "../assets/fonts/NexaLightItalic", 300, italic, otf);
+// Nexa Book
+@include font-face("Nexa", "../assets/fonts/NexaBook", 400, null, otf);
+// Nexa Book Italic
+@include font-face("Nexa", "../assets/fonts/NexaBookItalic", 400, italic, otf);
+// Nexa Regular
+@include font-face("Nexa", "../assets/fonts/NexaRegular", 500, null, otf);
+// Nexa Regular Italic
+@include font-face("Nexa", "../assets/fonts/NexaRegularItalic", 500, italic, otf);
+// Nexa Bold
+@include font-face("Nexa", "../assets/fonts/NexaBold", 600, null, otf);
+// Nexa Bold Italic
+@include font-face("Nexa", "../assets/fonts/NexaBoldItalic", 600, italic, otf);
+// Nexa Extra Bold
+@include font-face("Nexa", "../assets/fonts/NexaXBold", 700, null, otf);
+// Nexa Extra Bold Italic
+@include font-face("Nexa", "../assets/fonts/NexaXBoldItalic", 700, italic, otf);
+// Nexa Heavy
+@include font-face("Nexa", "../assets/fonts/NexaHeavy", 800, null, otf);
+// Nexa Heavy Italic
+
+@include font-face("Nexa", "../assets/fonts/NexaHeavyItalic", 800, italic, otf);
+// Nexa Black
+@include font-face("Nexa", "../assets/fonts/NexaBlack", 900, null, otf);
+// Nexa Black Italic
+@include font-face("Nexa", "../assets/fonts/NexaBlackItalic", 900, italic, otf);
+
 
         header
         {
@@ -207,14 +267,7 @@
 #main .myimage
 {
   position: absolute;
-width: 366.36px;
-height: 516.65px;
 
-background: rgba(196, 196, 196, 0.18);
-box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02);
-backdrop-filter: blur(42px);
-/* Note: backdrop-filter has minimal browser support */
-border-radius: 35px;
 transform: rotate(11.9deg);
 z-index: 1;
 
@@ -228,29 +281,28 @@ z-index: 1;
     }
   }
 }
-#main
-{
 
+#main .balls
+{
+  width: 637px;
 }
 #main .balls img{
-  position: absolute;
+  position: relative;
   z-index: 0;
 }
-#main .balls img {
-  position: absolute;
-  z-index: 0; }
+
   #main .balls img:nth-child(1) {
-    top: 120px;
+    top: -121px;
     left: 117px; }
   #main .balls img:nth-child(2) {
-    top: 154px;
-    left: 486px; }
+    top: -50px;
+    left: 344px; }
   #main .balls img:nth-child(3) {
-    top: 533px;
-    left: 0px; }
+    top: 329px;
+    left: -220px;}
   #main .balls img:nth-child(4) {
-    top: 449px;
-    left: 237px; }
+    top: 108px;
+    left: 271px; }
 // /* iPhone 11 Pro Max - 2 */
 
 // position: absolute;
@@ -355,4 +407,301 @@ z-index: 1;
   display: flex;
   align-items: center;
   min-height: 100vh;
+}
+
+
+
+.section-title {
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto 2rem;
+  
+  h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 0 .5rem;
+  }
+  
+  .separator {
+    width: 160px;
+    border-bottom: 2px solid #999;
+    margin: 0 auto 2rem;
+  }
+  
+  p {
+    color: #999;
+    margin: 0;
+  }
+}
+
+
+.list-inline {
+  margin:0;padding: 0;
+  list-style: none;
+  overflow: auto;
+
+  //@include clearfix();
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  li {
+    margin:0;padding: 0 5px;
+    display: inline-block;
+    
+    a {
+      color: #111;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      background-color: #e7e7e7;
+      padding: 1rem 2rem;
+      
+      border-radius: 4px;
+      
+      transition: all 0.3s ease;
+      
+      h5 {
+        font-size: .75rem;
+        line-height: 1rem;
+        font-weight: 600;
+        margin:0;
+      }
+      
+      
+      &.active,
+      &:hover {
+        background-color: #111;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.portfolio-filters {
+  text-align: center;
+  margin: 4rem 0 3rem;
+}
+
+.portfolio {
+  width: 100%;
+}
+.portfolio-item {
+  float: left;
+  width: 25%;
+  position: relative;
+  
+  .portfolio-image {
+    margin: 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    > img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  
+  >a {
+    display: block;
+    
+    .project-overlay {
+      overflow: hidden;
+      position: absolute;
+      top: 0; left: 0;
+          margin: 8px;
+      border-radius: 16px;
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      background-color: rgba(10,10,10,.9);
+      color: #fff;
+      text-align: center;
+      opacity: 0;
+      
+      transition: all 0.3s ease;
+      
+      .project-info {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        margin-top: 0px;
+        opacity:0;
+        
+        i.fa {
+          margin-bottom: 1rem;
+          background-color: #fff;
+          font-size: 22px;
+          line-height: 48px;
+          width: 48px;
+          height: 48px;
+          color: #000;
+          
+          border-radius: 32px;
+        }
+        
+        transition: all 0.3s ease 0.3s;
+        
+        .project-name {
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          margin: 0 0 .5rem;
+        }
+        p {
+          color: #999;
+          font-size: .85rem;
+          margin: 0 1rem 1rem;
+        }
+      }
+    }
+    
+  }
+  >a:hover {
+    .project-overlay{
+      opacity: 1;
+      
+      transition: all 0.2s ease;
+      
+      .project-info {
+        margin-top: -60px;
+        opacity:1;
+      }
+    }
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --step--2: clamp(3.13rem, 2.62rem + 2.51vw, 5.76rem);
+  --step--1: clamp(3.75rem, 3.09rem + 3.29vw, 7.20rem);
+  --step-0: clamp(4.50rem, 3.64rem + 4.29vw, 9.00rem);
+}
+
+body {
+	background-color: #efefef;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-weight: 600;
+	min-height: 400vh;
+}
+
+.marquee {
+	border-bottom: 1px solid #1a1a1a;
+	color: #ccc;
+	font-size: var(--step-0);
+	font-weight: 700;
+	height: calc(170px + 4rem);
+	overflow: hidden;
+	position: relative;
+	width: 100vw;
+	
+	& img {
+		object-fit: cover;
+		max-height: 150px;
+	}
+}
+
+.track {
+	height: 100%;
+	overflow: hidden;
+	padding: 2rem 0;
+	position: absolute;
+	white-space: nowrap;
+	
+	& .text {
+		animation: marquee 50000ms linear infinite;
+		align-items: center;
+		display: inline-flex;
+		will-change: transform;
+	}
+}
+
+.-focus {
+	color: #1a1a1a;
+	font-weight: 900;
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-3d {
+  position: relative;
+  perspective: 20vw;
+  transform-style: preserve-3d;
+}
+
+.fold {
+  overflow: hidden;
+  width: 100vw;
+  height: 80vh;
+}
+
+.fold-top {
+  position: absolute;
+  transform-origin: bottom center;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+}
+
+.fold-center {
+	width: 100vw;
+}
+
+.fold-bottom {
+  position: absolute;
+  transform-origin: top center;
+  right: 0;
+  left: 0;
+  top: 100%;
+}
+.fold-align {
+  width: 100%;
+  height: 100%;
+}
+.fold-bottom .fold-align {
+  transform: translateY(-100%);
+}
+.fold-top .fold-align {
+  transform: translateY(100%);
+}
+
+.fold-bottom {
+  transform-origin: top center;
+  transform: rotateX(120deg);
+}
+
+.fold-top {
+  transform-origin: bottom center;
+  transform: rotateX(-120deg);
 }
