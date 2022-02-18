@@ -218,29 +218,29 @@ header {
 
 @keyframes flake-1 {
   0% {
-    transform: rotate(257deg); }
+    transform: rotate(290deg); }
   100% {
-    transform: rotate(617deg); } }
+    transform: rotate(650deg); } }
 
 #main .graphics svg:nth-child(1) {
-  animation: flake-1 43.33333s linear infinite;
+  animation: flake-1 26.66667s linear infinite;
   will-change: rotate; }
 
 @keyframes flake-2 {
   0% {
-    transform: rotate(173deg); }
+    transform: rotate(53deg); }
   100% {
-    transform: rotate(533deg); } }
+    transform: rotate(413deg); } }
 
 #main .graphics svg:nth-child(2) {
-  animation: flake-2 26.66667s linear infinite;
+  animation: flake-2 35s linear infinite;
   will-change: rotate; }
 
 @keyframes flake-3 {
   0% {
-    transform: rotate(279deg); }
+    transform: rotate(1deg); }
   100% {
-    transform: rotate(639deg); } }
+    transform: rotate(361deg); } }
 
 #main .graphics svg:nth-child(3) {
   animation: flake-3 30s linear infinite;
@@ -263,9 +263,9 @@ header {
   color: white; }
 
 .btn {
-  height: 48px !important;
+  height: 48px;
   width: 170px !important;
-  background: transparent !important;
+  background: transparent;
   font-weight: 700 !important;
   border: 0.7px solid #969696 !important; }
 
