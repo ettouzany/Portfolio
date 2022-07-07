@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+html, body {
+  overflow: hidden;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  height: 130vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(30vh);
+  transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+}
+.background:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.background:first-child {
+  /* background-image: url(https://i.postimg.cc/kXq9Qmnj/bgd1.jpg); */
+  background-color: black;
+  transform: translateY(-15vh);
+}
+.background:first-child .content-wrapper {
+  transform: translateY(15vh);
+}
+.background:nth-child(2) {
+  background-image: url(https://i.postimg.cc/W14vywqg/photo-1424746219973-8fe3bd07d8e3.jpg);
+}
+.background:nth-child(3) {
+  background-image: url(https://i.postimg.cc/TY0xQ41T/photo-1433840496881-cbd845929862.jpg);
+}
+
+/* Set stacking context of slides */
+.background:nth-child(1) {
+  z-index: 3;
+}
+
+.background:nth-child(2) {
+  z-index: 2;
+}
+
+.background:nth-child(3) {
+  z-index: 1;
+}
+
+.content-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-flow: column nowrap;
+  color: #fff;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  transform: translateY(40vh);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+}
+.content-title {
+  font-size: 12vh;
+  line-height: 1.4;
+}
+
+.background.up-scroll {
+  transform: translate3d(0, -15vh, 0);
+}
+.background.up-scroll .content-wrapper {
+  transform: translateY(15vh);
+}
+.background.up-scroll + .background {
+  transform: translate3d(0, 30vh, 0);
+}
+.background.up-scroll + .background .content-wrapper {
+  transform: translateY(30vh);
+}
+
+.background.down-scroll {
+  transform: translate3d(0, -130vh, 0);
+}
+.background.down-scroll .content-wrapper {
+  transform: translateY(40vh);
+}
+.background.down-scroll + .background:not(.down-scroll) {
+  transform: translate3d(0, -15vh, 0);
+}
+.background.down-scroll + .background:not(.down-scroll) .content-wrapper {
+  transform: translateY(15vh);
+}
+
+
+.disappear {
+  position: absolute;
+  left:0;
+  font-size: 100pt;
+  font-weight: 900;
+  right:0;
+  margin: auto;
+  font-family: Montserrat;
+
+  width:100%;
+  text-align: center;
+  height:fit-content;
+  bottom:0;
+  top:0;
+}
+.disappear span {
+  display: inline-block;
+  color:transparent;
+  text-shadow: 0px 0px 0px rgb(255, 255, 255);
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+.disappear span:nth-child(1){
+  animation-name: disappearleft;
+}
+.disappear span:nth-child(2){
+  animation-name: disappearleft;
+  animation-delay: .3s;
+}
+.disappear span:nth-child(3){
+  animation-name: disappearight;
+  animation-delay: .6s;
+}
+.disappear span:nth-child(4){
+  animation-name: disappearleft;
+  animation-delay: .8s;
+}
+.disappear span:nth-child(5){
+  animation-name: disappearight;
+  animation-delay: 1s;
+}
+.disappear span:nth-child(6){
+  animation-name: disappearight;
+  animation-delay: 1.3s;
+}
+.disappear span:nth-child(7){
+  animation-name: disappearleft;
+  animation-delay: 1.6s;
+}
+.disappear span:nth-child(8){
+  animation-name: disappearight;
+  animation-delay: 2s;
+}
+.disappear span:nth-child(9){
+  animation-name: disappearight;
+  animation-delay: 2.3s;
+}
+@keyframes disappearleft{
+  50% {transform: skew(50deg) translateY(-200%);
+      text-shadow: 0px 0px 50px;
+        opacity: 0;
+  }
+}
+@keyframes disappearight{
+  50% {transform: skew(-50deg) translateY(-200%);
+      text-shadow: 0px 0px 50px;
+        opacity: 0;
+  }
+}
+
+
+.shapes {
+  position: relative;
+  height: 100%;
+  width: 100vw;
+  background: #2128bd;
+  overflow: hidden;
+}
+
+.shape {
+  will-change: transform;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape.shape-1 {
+  background: #005ffe;
+  width: 650px;
+  height: 650px;
+  margin: -325px 0 0 -325px;
+}
+.shape.shape-2 {
+  background: #ffe5e3;
+  width: 440px;
+  height: 440px;
+  margin: -220px 0 0 -220px;
+}
+.shape.shape-3 {
+  background: #ffcc57;
+  width: 270px;
+  height: 270px;
+  margin: -135px 0 0 -135px;
+}
+
+.content {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  background: #fff;
+  mix-blend-mode: screen;
+}
+
+h1 {
+  font-size: 100px;
+  color: #000;
+  margin: 0;
+  text-align: center;
+}
+@media (min-width: 419px) {
+  h1 {
+    font-size: 100px;
+    font-size: calc((0.0989119683 * 100vw + (58.5558852621px)));
+  }
+}
+@media (min-width: 1430px) {
+  h1 {
+    font-size: 200px;
+  }
+}
+
+.cursor {
+  position: fixed;
+  background: #2128bd;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  will-change: transform;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #2128bd;
+}
+
+::selection {
+  color: #fff;
+  background: #2128bd;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <section class="background">
+          <div class="content-wrapper">
+              <div class="disappear">
+                <span>H</span> <span>A</span> <span>M</span> <span>Z</span> <span>A</span> 
+              </div>
+            <canvas id="canvas" width="1400" height="600">
+                            
+            </canvas>
+
+
+            <!-- <p class="content-title">Full Page Parallax Effect</p> -->
+            <!-- <p class="content-subtitle">Scroll down and up to see the effect!</p> -->
+          </div>
+        </section>
+        <section class="background">
+          <div class="content-wrapper">
+            <p class="content-title">Cras lacinia non eros nec semper.</p>
+            <p class="content-subtitle">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut massa mattis nibh semper pretium.</p>
+          </div>
+        </section>
+        <section class="background">
+
+          <div class="cursor"></div>
+          <div class="shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+          </div>
+          <div class="content">
+            <h1>Are you ready?</h1>
+          </div>
+        </section>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>

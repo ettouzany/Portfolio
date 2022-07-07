@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <style>
+      .box{
+        width: 366.36px;
+    height: 516.65px;
+
+    background: rgba(196, 196, 196, 0.18);
+    box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(42px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 35px;
+    margin:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:1px solid rgba(255,255,255,0.5);
+    border-left:1px solid rgba(255,255,255,0.5);
+    transform-style: preserve-3d;
+    transform: perspective(800px);
+    
+}
+
+
+
+    </style>
+</head>
+<body>
+  <header>
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <span class="logo" ><svg width="100" height="50" viewBox="0 0 815 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M73.872 145.96H153.648C155.76 145.96 157.584 146.728 159.12 148.264C160.656 149.8 161.424 151.624 161.424 153.736V197.224C161.424 199.336 160.656 201.16 159.12 202.696C157.584 204.232 155.76 205 153.648 205H8.496C6.384 205 4.56 204.232 3.024 202.696C1.488 201.16 0.720001 199.336 0.720001 197.224V11.176C0.720001 9.06399 1.488 7.23999 3.024 5.70399C4.56 4.16799 6.384 3.39999 8.496 3.39999H66.096C68.208 3.39999 70.032 4.16799 71.568 5.70399C73.104 7.23999 73.872 9.06399 73.872 11.176V145.96ZM207.918 21.832C225.582 7.62399 248.91 0.519989 277.902 0.519989C306.894 0.519989 330.126 7.71999 347.598 22.12C365.262 36.328 374.094 56.392 374.094 82.312V127.24C374.094 153.544 365.358 173.608 347.886 187.432C330.606 201.064 307.278 207.88 277.902 207.88C248.526 207.88 225.102 201.064 207.63 187.432C190.35 173.608 181.71 153.544 181.71 127.24V82.312C181.71 56.2 190.446 36.04 207.918 21.832ZM262.35 145.96C266.19 149.8 271.374 151.72 277.902 151.72C284.43 151.72 289.614 149.8 293.454 145.96C297.294 142.12 299.214 136.264 299.214 128.392V80.008C299.214 72.328 297.294 66.568 293.454 62.728C289.614 58.696 284.43 56.68 277.902 56.68C271.374 56.68 266.19 58.696 262.35 62.728C258.51 66.568 256.59 72.328 256.59 80.008V128.392C256.59 136.264 258.51 142.12 262.35 145.96ZM509.112 83.464H588.312C590.424 83.464 592.248 84.232 593.784 85.768C595.32 87.304 596.088 89.128 596.088 91.24V128.68C596.088 154.024 587.064 173.608 569.016 187.432C550.968 201.064 526.872 207.88 496.728 207.88C466.776 207.88 443.16 201.256 425.88 188.008C408.6 174.568 399.96 154.504 399.96 127.816V79.432C399.96 53.896 408.792 34.408 426.456 20.968C444.12 7.33599 467.64 0.519989 497.016 0.519989C526.584 0.519989 550.488 6.75999 568.728 19.24C586.968 31.528 596.088 46.696 596.088 64.744C596.088 66.472 595.416 68.008 594.072 69.352C592.92 70.504 591.48 71.08 589.752 71.08H526.104C522.264 71.08 519.48 70.024 517.752 67.912C513.912 62.92 511.032 60.04 509.112 59.272C504.696 57.544 500.664 56.68 497.016 56.68C482.232 56.68 474.84 63.88 474.84 78.28V127.24C474.84 143.56 482.712 151.72 498.456 151.72C514.584 151.72 522.648 144.808 522.648 130.984H509.112C507 130.984 505.176 130.216 503.64 128.68C502.104 127.144 501.336 125.32 501.336 123.208V91.24C501.336 89.128 502.104 87.304 503.64 85.768C505.176 84.232 507 83.464 509.112 83.464ZM648.356 21.832C666.02 7.62399 689.348 0.519989 718.34 0.519989C747.332 0.519989 770.564 7.71999 788.036 22.12C805.7 36.328 814.532 56.392 814.532 82.312V127.24C814.532 153.544 805.796 173.608 788.324 187.432C771.044 201.064 747.716 207.88 718.34 207.88C688.964 207.88 665.54 201.064 648.068 187.432C630.788 173.608 622.148 153.544 622.148 127.24V82.312C622.148 56.2 630.884 36.04 648.356 21.832ZM702.788 145.96C706.628 149.8 711.812 151.72 718.34 151.72C724.868 151.72 730.052 149.8 733.892 145.96C737.732 142.12 739.652 136.264 739.652 128.392V80.008C739.652 72.328 737.732 66.568 733.892 62.728C730.052 58.696 724.868 56.68 718.34 56.68C711.812 56.68 706.628 58.696 702.788 62.728C698.948 66.568 697.028 72.328 697.028 80.008V128.392C697.028 136.264 698.948 142.12 702.788 145.96Z" fill="white"/>
+            </svg>
+            </span>
+        <span class="line">
+          <span class="inside_line">
+            <svg width="8" height="8" viewBox="0 0 83 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M78 38.3398C84.6667 42.1888 84.6667 51.8113 78 55.6603L15 92.0333C8.33333 95.8823 2.99288e-06 91.0711 3.32937e-06 83.3731L6.50921e-06 10.6269C6.8457e-06 2.92892 8.33334 -1.88232 15 1.96668L78 38.3398Z" fill="white"/>
+              </svg>
+              
+              
+          </span>
+        </span>
+        <div class="bg-blury">
+          <label for="show-menu" class="show-menu">Show Menu</label>
+          <input type="checkbox" id="show-menu" role="button">
+        
+          <ul id="menu">
+  
+            <li><a href="#main">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blog">Careers</a></li>
+            <li><a href="#resume">Blog</a></li>
+          </ul>
+          <button type="button" class="contact_btn btn btn-primary ">CONTACT US</button>
+  
+        </div>
+        </div>
+      </div>
+
+  </header>
+  <section id="main">
+      <svg class="main-bg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+              <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
+              <stop offset="0%" stop-color="#ff0" />
+              <stop offset="100%" stop-color="#0000" />
+            </radialGradient>
+            <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+              <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
+              <stop offset="0%" stop-color="#0ff" />
+              <stop offset="100%" stop-color="#0000" />
+            </radialGradient>
+            <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+              <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite" />
+              <stop offset="0%" stop-color="#f0f" />
+              <stop offset="100%" stop-color="#0000" />
+            </radialGradient>
+          </defs>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
+            <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite" />
+          </rect>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
+            <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite" />
+          </rect>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
+            <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite" />
+          </rect>
+        </svg>
+        
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-5 d-flex align-items-center">
+                  <!-- <div class="main-content">
+                      <h1 class="my-name">Hi I’m Noureddine Ettouzany</h1>
+                      <p class="content">A professional Web and app developer and designer dedicated to bring you Ideas to the real world.</p>
+                      <button class="btn btn-black btn-primary">
+                          Hire me
+                      </button>
+                  </div> -->
+              </div>
+              <div class="col-xl-7">
+                  <div class="graphics" >
+                    <svg width="600" height="600" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M800 400C800 486.62 771.882 570.899 719.874 640.168C667.865 709.437 594.777 759.951 511.596 784.117C428.416 808.284 339.638 804.796 258.61 774.178C177.582 743.56 108.682 687.466 62.2688 614.331L75.7781 605.757C120.335 675.968 186.479 729.817 264.266 759.21C342.053 788.604 427.279 791.952 507.133 768.753C586.986 745.553 657.151 697.059 707.079 630.561C757.007 564.063 784 483.155 784 400H800Z" fill="#fff"/>
+                      </svg>
+                      <svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M700 350C700 423.913 676.601 495.928 633.156 555.725C589.711 615.522 528.451 660.029 458.156 682.87C387.861 705.71 312.139 705.71 241.844 682.87C171.549 660.029 110.289 615.521 66.844 555.725L76.7545 548.524C118.679 606.228 177.795 649.178 245.629 671.219C313.464 693.26 386.536 693.26 454.37 671.219C522.205 649.178 581.321 606.228 623.245 548.524C665.17 490.821 687.75 421.326 687.75 350H700Z" fill="#fff"/>
+                        </svg>
+                        
+                        <svg width="800" height="800" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M700 350C700 405.234 686.928 459.683 661.852 508.897C636.777 558.11 600.41 600.69 555.725 633.156C511.04 665.621 459.306 687.05 404.752 695.691C350.198 704.331 294.374 699.938 241.844 682.87C189.314 665.802 141.569 636.543 102.513 597.487C63.4565 558.431 34.1983 510.686 17.1302 458.156C0.0620811 405.626 -4.33136 349.802 4.30909 295.248C12.9495 240.694 34.3785 188.96 66.8441 144.275L75.3388 150.447C43.8472 193.791 23.061 243.973 14.6798 296.89C6.29858 349.807 10.5602 403.957 27.1163 454.911C43.6724 505.866 72.0528 552.178 109.937 590.063C147.822 627.947 194.134 656.328 245.089 672.884C296.043 689.44 350.192 693.701 403.109 685.32C456.027 676.939 506.209 656.153 549.553 624.661C592.897 593.17 628.173 551.867 652.497 504.13C676.82 456.393 689.5 403.577 689.5 350L700 350Z" fill="#fff"/>
+                          </svg>
+                          
+                          
+                                                    
+                                    
+                                  
+                          <div class="myimage">
+                            <div class="box"></div>
+                          </div>
+                          <div class="balls ">
+                          <img width="100" src="./assets/images/balls/gold1.png" alt="">
+                          <img width="125" src="./assets/images/balls/gold2.png" alt="">
+                          <img width="175" src="./assets/images/balls/gold3.png" alt="">
+                          <img width="300" src="./assets/images/balls/gold4.png" alt="">
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+    <section id="services" class="container">
+      <div class="glassy" style="display: inline-block;
+      width: inherit;">
+          <div class="card-header-glassy">
+              <div class="glassy">
+                  <div class="glassy-pill-title">UI/UX & <br>Graphics</div>
+                  <div class="glassy-icon">
+                      <i class="uil uil-brush-alt"></i>
+                  </div>
+              </div>
+              <div class="glassy">
+                  <div class="glassy-pill-title">Web <br>Development</div>
+                  <div class="glassy-icon">
+                      <i class="uil uil-arrow"></i>
+                  </div>
+              </div>
+              <div class="glassy">
+                  <div class="glassy-pill-title">DevOps <br>Solutions</div>
+                  <div class="glassy-icon">
+                      <i class="uil uil-process"></i>
+                  </div>
+              </div>
+          </div>
+          <div>
+              <div class="row">
+                  <div class="text-center p-5 col-12">
+                      The top-notch and preeminent Web and Mobile App Development Company of India with its global presence in USA, MindInventory is first-rate choice of the clients worldwide. With sheer customer satisfaction in mind, we are profoundly dedicated to developing
+                      highly intriguing apps that strictly meet the business requirements and catering a wide spectrum of projects.
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="portfolio-title">
+        <div class="section-title">
+          <h1>Portfolio</h1>
+          <div class="separator"></div>
+          <p>Portfolio created with isotope - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto repellendus!</p>
+        </div>
+      </div>
+      
+      <div id="filters" class="portfolio-filters">
+        <ul class="list-inline">
+                  <li><a id="all" data-filter="*" class="active"><h5>All</h5></a></li>	
+                  <li><a data-filter=".branding"><h5>Branding</h5></a></li>
+                  <li><a data-filter=".design"><h5>Design</h5></a></li>
+                  <li><a data-filter=".photography"><h5>Photography</h5></a></li>
+                  <li><a data-filter=".videography"><h5>Videography</h5></a></li>
+                  <li><a data-filter=".web"><h5>Web</h5></a></li>
+                </ul>
+      </div>
+      
+      <div id="Portfolio" class="portfolio">
+        
+        <!-- portfolio item-->
+        <div class="portfolio-item branding">
+          <div class="portfolio-image">
+            <img src="https://source.unsplash.com/5VXH4RG88gc" alt="image" />
+          </div>
+          <a href="#">
+            <div class="project-overlay">
+              <div class="project-info">
+                <i class="fa fa-search"></i>
+                <h3 class="project-name">Project name 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- /portfolio item-->
+        
+        <!-- portfolio item-->
+        <div class="portfolio-item branding design">
+          <div class="portfolio-image">
+            <img src="https://source.unsplash.com/5VXH4RG88gc" alt="image" />
+          </div>
+          <a href="#">
+            <div class="project-overlay">
+              <div class="project-info">
+                <i class="fa fa-search"></i>
+                <h3 class="project-name">Project name 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- /portfolio item-->
+        
+        <!-- portfolio item-->
+        <div class="portfolio-item design">
+          <div class="portfolio-image">
+            <img src="https://source.unsplash.com/-RBuQ2PK_L8" alt="image" />
+          </div>
+          <a href="#">
+            <div class="project-overlay">
+              <div class="project-info">
+                <i class="fa fa-search"></i>
+                <h3 class="project-name">Project name 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- /portfolio item-->
+        
+        <!-- portfolio item-->
+        <div class="portfolio-item photography">
+          <div class="portfolio-image">
+            <img src="https://source.unsplash.com/5VXH4RG88gc" alt="image" />
+          </div>
+          <a href="#">
+            <div class="project-overlay">
+              <div class="project-info">
+                <i class="fa fa-search"></i>
+                <h3 class="project-name">Project name 4</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- /portfolio item-->
+        
+      </div>
+  
+  
+  
+    </div>
+  </section>
+
+  <div class="screen " id="fold-effect">
+    <div class="wrapper-3d">
+      <div class="fold fold-top">
+        <div class="fold-align">
+          <div class="fold-content">
+            <div class="marquee">
+              <div class="track">
+                Creators.Creators.<span class="-focus">Creators.</span>Creators.Creators.Creators.Creators.Creators.
+              </div>
+            </div>
+  
+            <div class="marquee">
+              <div class="track">
+                Thinkers.Thinkers.<span class="-focus">Thinkers.</span>Thinkers.Thinkers.Thinkers.Thinkers.Thinkers.
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-5 my-4 pt-4">
+                  <div class="main-content">
+                    <h1 class="my-name">Hi I’m Noureddine Ettouzany</h1>
+                    <p class="content">A professional Web and app developer and designer dedicated to bring you Ideas to the real world.</p>
+                    <button class="btn btn-black btn-primary">
+                        Hire me
+                    </button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee">
+              <div class="track">
+                Innovators.Innovators.<span class="-focus">Innovators.</span>Innovators.Innovators.Innovators.Innovators.Innovators.
+              </div>
+            </div>
+  
+            <div class="marquee">
+              <div class="track">
+                Rebels.Rebels.Rebels.<span class="-focus">Rebels.</span>Rebels.Rebels.Rebels.Rebels.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fold fold-center" id="center-fold">
+        <div class="fold-align">
+          <div class="fold-content" id="center-content">
+            <div class="marquee">
+              <div class="track">
+                Creators.Creators.<span class="-focus">Creators.</span>Creators.Creators.Creators.Creators.Creators.
+              </div>
+            </div>
+  
+            <div class="marquee">
+              <div class="track">
+                Thinkers.Thinkers.<span class="-focus">Thinkers.</span>Thinkers.Thinkers.Thinkers.Thinkers.Thinkers.
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-5 my-4 pt-4">
+                  <div class="main-content">
+                    <h1 class="my-name">Hi I’m Noureddine Ettouzany</h1>
+                    <p class="content">A professional Web and app developer and designer dedicated to bring you Ideas to the real world.</p>
+                    <button class="btn btn-black btn-primary">
+                        Hire me
+                    </button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee">
+              <div class="track">
+                Innovators.Innovators.<span class="-focus">Innovators.</span>Innovators.Innovators.Innovators.Innovators.Innovators.
+              </div>
+            </div>
+  
+            <div class="marquee">
+              <div class="track">
+                Rebels.Rebels.Rebels.<span class="-focus">Rebels.</span>Rebels.Rebels.Rebels.Rebels.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="about">
+    <div class="containers">
+      <div class="left-container">
+        <div class="logo">INFNT</div>
+        <div class="info">
+          <a href="#">FAQ</a>
+          <a href="#">Help</a>
+        </div>
+      </div>
+  
+      <div class="right-container">
+        <div class="first-block"></div>
+        <div class="menu-container">
+          <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+  
+        <div class="story">
+          <h1>Our Story</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam,
+            tempore.ipsum dolor sit. tempore
+          </p>
+          <p>Read More</p>
+        </div>
+        <div class="social-container">
+          <li class="social">
+            <ul>
+              Facebook
+            </ul>
+            <ul>
+              Instagram
+            </ul>
+            <ul>
+              Twitter
+            </ul>
+          </li>
+        </div>
+      </div>
+      <div class="center-container"></div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <section class="info">
+      <img src="https://codetheweb.blog/assets/img/icon2.png">
+      <h1>Learn HTML &mdash; <a href="https://codetheweb.blog/" target="_blank">Code The Web</a></h1>
+    </section>
+    <section class="cartes-wrapper">
+      <div class="carte-grid-space">
+        <div class="num">01</div>
+        <a class="carte" href="https://codetheweb.blog/2017/10/06/html-syntax/" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+          <div>
+            <h1>HTML Syntax</h1>
+            <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p>
+            <div class="date">6 Oct 2017</div>
+            <div class="tags">
+              <div class="tag">HTML</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="carte-grid-space">
+        <div class="num">02</div>
+        <a class="carte" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+          <div>
+            <h1>Basic types of HTML tags</h1>
+            <p>Learn about some of the most common HTML tags…</p>
+            <div class="date">9 Oct 2017</div>
+            <div class="tags">
+              <div class="tag">HTML</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="carte-grid-space">
+        <div class="num">03</div>
+        <a class="carte" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg')">
+          <div>
+            <h1>Links, images and about file paths</h1>
+            <p>Learn how to use links and images along with file paths…</p>
+            <div class="date">14 Oct 2017</div>
+            <div class="tags">
+              <div class="tag">HTML</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+    </section>
+  </section>
+  <section id="resume">
+
+  </section>
+  <section id="contact">
+
+  </section>
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".box"), {
+     max: 25,
+         speed: 1000,
+         easing:"cubic-bezier(.03,.98,.52,.99)",
+         perspective:600,
+         transition:true
+     });
+
+     
+   $(function(){
+     var $container = $('#Portfolio');
+
+     $container.isotope({
+       itemSelector: '.portfolio-item',
+       layoutMode: 'fitRows',
+     });
+
+     $('#filters').on( 'click', 'a', function() {
+       var filterValue = $(this).attr('data-filter');
+       $('#filters a').removeClass('active');
+       $(this).addClass('active');
+       $container.isotope({ filter: filterValue });
+     });
+   });
+
+
+
+   gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray('.marquee').forEach((el, index) => {
+const w = el.querySelector('.track');
+console.log(w.scroll())
+const [x, xEnd] = (index % 2 == 0) ? [-500, -1500] : [-500, 0];
+gsap.fromTo(w, {  x  }, {
+ x: xEnd,
+ scrollTrigger: {
+   scrub: 1
+ }
+});
+});
+
+const centerContent = document.getElementById('center-content');
+const centerFold = document.getElementById('center-fold');
+const foldsContent = Array.from(document.querySelectorAll('.fold-content'));
+
+let targetScroll = -(
+document.documentElement.scrollTop || document.body.scrollTop
+);
+let currentScroll = targetScroll;
+
+const tick = () => {
+const overflowHeight = centerContent.clientHeight - centerFold.clientHeight;
+
+//document.body.style.height = `${overflowHeight + window.innerHeight}px`;
+
+targetScroll = -(
+ document.documentElement.scrollTop || document.body.scrollTop
+);
+currentScroll += (targetScroll - currentScroll) * 0.1;
+foldsContent.forEach(content => {
+ content.style.transform = `translateY(${currentScroll}px)`;
+});
+requestAnimationFrame(tick);
+};
+tick();
+
+ </script>
+     <script type="text/javascript">
+       //Menu animation
+       const sections = ['#main','#services','#portfolio','#about','#blog','#resume','#contact'];
+       add = 28;
+       window.onload = window.scroll(0,1);
+       sections.forEach(element => {
+         //if(document.getElementById(element.split('#')[1]))
+          TweenMax.fromTo(".inside_line",
+            {
+
+              width: add,
+            }
+            ,{
+              scrollTrigger:{
+              start:"top buttom",
+              scrub:true,
+              trigger:element,
+              //markers:true,
+              toggleActions:"restart pause resume pause"
+              },
+            width: add+100,
+            ease: Expo.easeInOut},
+        );
+        add = add+100;
+       });
+      //  TweenMax.fromTo(".contact_btn",2,
+      //       {
+              
+      //       },
+      //       {
+      //           scrollTrigger:{
+      //           //start:"top none",
+      //           end:"center none",
+      //           scrub:true,
+      //           trigger:'#contact',
+      //           markers:true,
+      //           toggleActions:"restart pause resume pause"
+      //           },
+      //           backgroundColor:"#ff0000",
+      //           width:"50%",
+      //           top:"100px",
+      //           ease:Power2.easeInOut
+      //       }
+      //       );
+            TweenMax.to(".contact_btn", 2,
+                
+                {
+                  scrollTrigger:{
+                    //start:"top none",
+                    end:"center none",
+                    scrub:true,
+                    trigger:'#contact',
+                    markers:true,
+                    toggleActions:"restart pause resume pause"
+                  },
+                backgroundColor:"#fff",
+                color:"#000",
+                height:'100vh',
+                //width:"50%", 
+                //top:"100px", 
+                ease:Power2.easeInOut});
+
+      //  TweenMax.from(".inside_line",
+      //  {
+      //   scrollTrigger:{
+      //     end:"top top",
+      //     scrub:true,
+      //     trigger:"#main",
+      //     //toggleActions:"restart pause resume pause"
+      //   },
+      //   width: "0",
+      //   //ease: Expo.easeInOut
+      // });
+      //  TweenMax.to(".inside_line",2,
+      //  {
+      //   scrollTrigger:{
+      //     start:"top buttom",
+      //     scrub:true,
+      //     trigger:"#main",
+      //     markers:true,
+      //     toggleActions:"restart pause resume pause"
+      //   },
+      //   width: "120",
+      //   ease: Expo.easeInOut
+      // });
+      // TweenMax.fromTo(".inside_line",2,
+      //  {
+        
+      //     scrollTrigger:{
+      //       end:"top top",
+      //       scrub:true,
+      //       trigger:"#main",
+      //       //toggleActions:"restart pause resume pause"
+      //     },
+      //     width: "120",
+      //     //ease: Expo.easeInOut
+      //   }
+      //   ,{
+      //     scrollTrigger:{
+      //     start:"top buttom",
+      //     scrub:true,
+      //     trigger:"#services",
+      //     markers:true,
+      //     toggleActions:"restart pause resume pause"
+      //   },
+      //   width: "220",
+      //   ease: Expo.easeInOut}
+      // );
+      TweenMax.from(".left-container", 2, {
+        scrollTrigger:{
+          end:"center center",
+          scrub:true,
+          trigger:".left-container",
+          toggleActions:"restart pause resume pause"
+        },
+        
+        width: "0",
+        ease: Expo.easeInOut
+      });
+      TweenMax.from(".right-container", 2, {
+        scrollTrigger:".right-container",
+        delay: 1.5,
+        width: "0",
+        opacity: "0",
+        ease: Expo.easeInOut
+      });
+      TweenMax.from(".center-container", 2, {
+        scrollTrigger:".center-container",
+
+        delay: 3,
+        width: "0",
+        x: -20,
+        ease: Expo.easeInOut
+      });
+      TweenMax.from(".logo", 2, {
+        scrollTrigger:".logo",
+
+        delay: 1.5,
+        y: 20,
+        opacity: 0,
+        ease: Expo.easeInOut
+      });
+      TweenMax.from(".bg-blury", 2, {
+        //scrollTrigger:".bg-blury",
+
+         /// delay: 1.5,
+        x: 100,
+        scale: 2.5,
+        opacity: 0,
+        ease: Expo.easeInOut
+      });
+      TweenMax.from(".info", 2, {
+        delay: 1.5,
+        y: 50,
+        opacity: 0,
+        scale: 2.5,
+        ease: Expo.easeInOut
+      });
+      TweenMax.from(".story", 2, {
+        delay: 2.5,
+        y: 20,
+        opacity: 0,
+        ease: Expo.easeInOut
+      });
+      TweenMax.from(".menu", 2, {
+        delay: 3.5,
+        y: 20,
+        opacity: 0,
+        rotation: 90,
+        ease: Expo.easeInOut
+      });
+      TweenMax.staggerFrom(
+        ".social ul",
+        2,
+        {
+          delay: 3.8,
+          opacity: 0,
+          y: 20,
+          ease: Expo.easeInOut
+        },
+        0.1
+      );
+    </script>
+  <footer>
+    sasa
+  </footer>
+</body>
+</html>
