@@ -98,6 +98,9 @@
   font-weight: 900;
   src: url("../assets/fonts/NexaBlackItalic.otf") format("opentype"); }
 
+body {
+  background-color: #000 !important; }
+
 header {
   position: fixed;
   width: 100%;
@@ -218,32 +221,32 @@ header {
 
 @keyframes flake-1 {
   0% {
-    transform: rotate(290deg); }
+    transform: rotate(48deg); }
   100% {
-    transform: rotate(650deg); } }
+    transform: rotate(408deg); } }
 
 #main .graphics svg:nth-child(1) {
-  animation: flake-1 26.66667s linear infinite;
+  animation: flake-1 20s linear infinite;
   will-change: rotate; }
 
 @keyframes flake-2 {
   0% {
-    transform: rotate(53deg); }
+    transform: rotate(121deg); }
   100% {
-    transform: rotate(413deg); } }
+    transform: rotate(481deg); } }
 
 #main .graphics svg:nth-child(2) {
-  animation: flake-2 35s linear infinite;
+  animation: flake-2 30s linear infinite;
   will-change: rotate; }
 
 @keyframes flake-3 {
   0% {
-    transform: rotate(1deg); }
+    transform: rotate(301deg); }
   100% {
-    transform: rotate(361deg); } }
+    transform: rotate(661deg); } }
 
 #main .graphics svg:nth-child(3) {
-  animation: flake-3 30s linear infinite;
+  animation: flake-3 24.28571s linear infinite;
   will-change: rotate; }
 
 #main .main-bg {

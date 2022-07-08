@@ -57,7 +57,9 @@
 @include font-face("Nexa", "../assets/fonts/NexaBlack", 900, null, otf);
 // Nexa Black Italic
 @include font-face("Nexa", "../assets/fonts/NexaBlackItalic", 900, italic, otf);
-
+body{
+  background-color: #000 !important;
+}
 
         header
         {
@@ -903,6 +905,7 @@ z-index: 1;
 //   font-family: 'Open Sans';
 //   background: #fafafa;
 // }
+
 #blog
 {
   &{
